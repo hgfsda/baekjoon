@@ -2,12 +2,11 @@
 using namespace std;
 
 int main() {
-	int A, B;
-	cin >> A >> B;
-	cout << A * (B % 10) << endl;
-	cout << A * ((B / 10) % 10) << endl;
-	cout << A* ((B / 100) % 10) << endl;
-	cout << A * B << endl;
-	
+	long long A, B, C;
+
+	cin >> A >> B >> C;
+
+	cout << A + B + C << endl;
+
 	return 0;
 }
