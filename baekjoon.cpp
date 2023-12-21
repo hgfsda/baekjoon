@@ -2,12 +2,12 @@
 using namespace std;
 
 int main() {
-	int A, B, C;
-	cin >> A >> B >> C;
-	cout << (A+B)%C << endl;
-	cout << ((A %C) + (B%C)) % C << endl;
-	cout << (A * B) % C << endl;
-	cout << ((A % C) * (B % C)) % C << endl;
+	int A, B;
+	cin >> A >> B;
+	cout << A * (B % 10) << endl;
+	cout << A * ((B / 10) % 10) << endl;
+	cout << A* ((B / 100) % 10) << endl;
+	cout << A * B << endl;
 	
 	return 0;
 }
