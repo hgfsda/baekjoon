@@ -2,11 +2,12 @@
 using namespace std;
 
 int main() {
-	int arr;
-	cin >> arr;
-	if (arr < 1000 || arr > 3000)
-		return 1;
-	cout << arr - 543 << endl;
+	int A, B, C;
+	cin >> A >> B >> C;
+	cout << (A+B)%C << endl;
+	cout << ((A %C) + (B%C)) % C << endl;
+	cout << (A * B) % C << endl;
+	cout << ((A % C) * (B % C)) % C << endl;
 	
 	return 0;
 }
