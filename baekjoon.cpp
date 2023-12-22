@@ -5,15 +5,13 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	int N, arr[100], v, cnt = 0;
-	cin >> N;
+	int N, X, A[10000];
+	cin >> N >> X;
 	for (int i = 0; i < N; ++i) {
-		cin >> arr[i];
+		cin >> A[i];
 	}
-	cin >> v;
 	for (int i = 0; i < N; ++i)
-		if (v == arr[i])
-			++cnt;
-	cout << cnt;
+		if (X > A[i])
+			cout << A[i] << ' ';
 	return 0;
 }
