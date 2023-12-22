@@ -2,15 +2,18 @@
 using namespace std;
 
 int main() {
-	int N, A, min, max;
-	cin >> N;
-	for (int i = 0; i < N; ++i) {
-		cin >> A;
-		if (i == 0)
-			min = max = A;
-		if (A < min) min = A;
-		if (A > max) max = A;
+	int A[9], max, cnt;
+	for (int i = 0; i < 9; ++i) {
+		cin >> A[i];
+		if (i == 0) {
+			max = A[0];
+			cnt = 1;
+		}
+		if (A[i] > max) {
+			max = A[i];
+			cnt = i + 1;
+		}
 	}
-	cout << min << ' ' << max;
+	cout << max << '\n' << cnt;
 	return 0;
 }
