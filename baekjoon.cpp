@@ -1,10 +1,10 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
 
 int main() {
-	int num;
-	char S[1001];
-	cin >> S >> num;
-	cout << S[num - 1];
+	char S[1000];
+	cin >> S;
+	cout << strlen(S);
 	return 0;
 }
