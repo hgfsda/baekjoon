@@ -2,19 +2,20 @@
 using namespace std;
 
 int main() {
-	int N[10], total[42], cnt = 0;
-	for (int i = 0; i < 42; ++i) {
-		total[i] = 0;
+	int B[100], N, M, s, e, temp;
+	cin >> N >> M;
+	for (int i = 0; i < N; ++i)
+		B[i] = i + 1;
+	for (int i = 0; i < M; ++i) {
+		cin >> s >> e;
+		for (int j = s - 1; j < e; ++j) {
+			temp = B[j];
+			B[j] = B[e - 1];
+			B[e - 1] = temp;
+			--e;
+		}
 	}
-	for (int i = 0; i < 10; ++i) {
-		cin >> N[i];
-		N[i] = N[i] % 42;
-		total[N[i]] += 1;
-	}
-	for (int i = 0; i < 42; ++i) {
-		if (total[i] != 0)
-			++cnt;
-	}
-	cout << cnt;
+	for (int i = 0; i < N; ++i)
+		cout << B[i] << ' ';
 	return 0;
 }
