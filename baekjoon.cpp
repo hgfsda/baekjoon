@@ -3,13 +3,17 @@ using namespace std;
 
 int main() {
 
-	int A;
-	cin >> A;
+	int x, y;
+	cin >> x >> y;
 
-	if ((A % 4 == 0 && A % 100 != 0) || A % 400 == 0)
+	if (x > 0 && y > 0)
 		cout << '1' << endl;
-	else
-		cout << '0' << endl;
+	else if (x < 0 && y > 0)
+		cout << '2' << endl;
+	else if (x < 0 && y < 0)
+		cout << '3' << endl;
+	else if (x > 0 && y < 0)
+		cout << '4' << endl;
 
 	return 0;
 }
