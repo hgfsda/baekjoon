@@ -2,13 +2,14 @@
 using namespace std;
 
 int main() {
-	int N;
-	cin >> N;
-
-	while (N >= 4) {
-		N -= 4;
-		cout << "long ";
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	int T, A, B;
+	cin >> T;
+	for (int i = 0; i < T; ++i) {
+		cin >> A >> B;
+		cout << A + B << '\n';
 	}
-	cout << "int" << endl;
 	return 0;
 }
