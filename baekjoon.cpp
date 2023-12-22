@@ -5,15 +5,23 @@ int main() {
 
 	int A, B, C;
 	cin >> A >> B >> C;
-
-	B += C;
-	while (B >= 60) {
-		B -= 60;
-		A += 1;
-		if (A >= 24)
-			A -= 24;
+	
+	if (A == B && A == C && B == C)
+		cout << 10000 + A * 1000 << endl;
+	else if (A != B && A != C && B != C) {
+		if (A >= B && A >= C)
+			cout << A * 100 << endl;
+		else if (B >= A && B >= C)
+			cout << B * 100 << endl;
+		else if (C >= B && C >= A)
+			cout << C * 100 << endl;
 	}
+	else if (A == B && A != C)
+		cout << 1000 + A * 100 << endl;
+	else if (A == C && A != B)
+		cout << 1000 + A * 100 << endl;
+	else if (C == B && B != A)
+		cout << 1000 + B * 100 << endl;
 
-	cout << A << " " << B << endl;
 	return 0;
 }
