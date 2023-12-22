@@ -5,11 +5,15 @@ int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	int A, B;
-	while (1) {
-		cin >> A >> B;
-		if (cin.eof()) break;
-		cout << A + B << '\n';
+	int N, arr[100], v, cnt = 0;
+	cin >> N;
+	for (int i = 0; i < N; ++i) {
+		cin >> arr[i];
 	}
+	cin >> v;
+	for (int i = 0; i < N; ++i)
+		if (v == arr[i])
+			++cnt;
+	cout << cnt;
 	return 0;
 }
