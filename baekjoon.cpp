@@ -2,18 +2,16 @@
 using namespace std;
 
 int main() {
-	int A[100], N, M, i, j, temp;
-	cin >> N >> M;
-	for (int s = 0; s < N; ++s)
-		A[s] = s+1;
-	for (int s = 0; s < M; ++s) {
-		cin >> i >> j;
-		temp = A[i - 1];
-		A[i - 1] = A[j - 1];
-		A[j - 1] = temp;
+	int N[30], cnt;
+	for (int i = 0; i < 30; ++i) {
+		N[i] = 0;
 	}
-	for (int s = 0; s < N; ++s)
-		cout << A[s] << ' ';
-
+	for (int i = 0; i < 28; ++i) {
+		cin >> cnt;
+		N[cnt - 1] = 1;
+	}
+	for (int i = 0; i < 30; ++i)
+		if (N[i] == 0)
+			cout << i + 1 << '\n';
 	return 0;
 }
