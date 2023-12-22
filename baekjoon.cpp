@@ -3,18 +3,17 @@ using namespace std;
 
 int main() {
 
-	int H, M;
-	cin >> H >> M;
+	int A, B, C;
+	cin >> A >> B >> C;
 
-	M -= 45;
-	if (M < 0) {
-		M += 60;
-		H -= 1;
-		if (H < 0)
-			H += 24;
+	B += C;
+	while (B >= 60) {
+		B -= 60;
+		A += 1;
+		if (A >= 24)
+			A -= 24;
 	}
 
-	cout << H << " " << M << endl;
-
+	cout << A << " " << B << endl;
 	return 0;
 }
