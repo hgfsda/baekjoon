@@ -2,16 +2,13 @@
 using namespace std;
 
 int main() {
-	int X, N, a[100], b[100], total = 0;
-	cin >> X >> N;
-	for (int i = 0; i < N; ++i) {
-		cin >> a[i] >> b[i];
-		total += a[i] * b[i];
-	}
-	if (total == X)
-		cout << "Yes" << endl;
-	else
-		cout << "No" << endl;
+	int N;
+	cin >> N;
 
+	while (N >= 4) {
+		N -= 4;
+		cout << "long ";
+	}
+	cout << "int" << endl;
 	return 0;
 }
