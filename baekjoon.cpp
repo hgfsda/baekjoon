@@ -2,18 +2,17 @@
 using namespace std;
 
 int main() {
-	int A[9], max, cnt;
-	for (int i = 0; i < 9; ++i) {
-		cin >> A[i];
-		if (i == 0) {
-			max = A[0];
-			cnt = 1;
-		}
-		if (A[i] > max) {
-			max = A[i];
-			cnt = i + 1;
-		}
+	int A[100], N, M, i, j, k;
+	cin >> N >> M;
+	for (int s = 0; s < N; ++s)
+		A[s] = 0;
+	for (int s = 0; s < M; ++s) {
+		cin >> i >> j >> k;
+		for (int t = i - 1; t < j; ++t)
+			A[t] = k;
 	}
-	cout << max << '\n' << cnt;
+	for (int s = 0; s < N; ++s)
+		cout << A[s] << ' ';
+
 	return 0;
 }
