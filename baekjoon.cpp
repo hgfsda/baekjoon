@@ -2,16 +2,15 @@
 using namespace std;
 
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-	int N, X, A[10000];
-	cin >> N >> X;
+	int N, A, min, max;
+	cin >> N;
 	for (int i = 0; i < N; ++i) {
-		cin >> A[i];
+		cin >> A;
+		if (i == 0)
+			min = max = A;
+		if (A < min) min = A;
+		if (A > max) max = A;
 	}
-	for (int i = 0; i < N; ++i)
-		if (X > A[i])
-			cout << A[i] << ' ';
+	cout << min << ' ' << max;
 	return 0;
 }
