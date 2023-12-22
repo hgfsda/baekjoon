@@ -2,20 +2,16 @@
 using namespace std;
 
 int main() {
-	int B[100], N, M, s, e, temp;
-	cin >> N >> M;
-	for (int i = 0; i < N; ++i)
-		B[i] = i + 1;
-	for (int i = 0; i < M; ++i) {
-		cin >> s >> e;
-		for (int j = s - 1; j < e; ++j) {
-			temp = B[j];
-			B[j] = B[e - 1];
-			B[e - 1] = temp;
-			--e;
-		}
+	int N, score[1000], max = 0;
+	float total = 0;
+	cin >> N;
+	for (int i = 0; i < N; ++i) {
+		cin >> score[i];
+		if (score[i] > max) max = score[i];
 	}
-	for (int i = 0; i < N; ++i)
-		cout << B[i] << ' ';
+	for (int i = 0; i < N; ++i) {
+		total += score[i] / static_cast<float>(max) * 100;
+	}
+	cout << total / N;
 	return 0;
 }
