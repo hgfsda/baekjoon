@@ -6,14 +6,18 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	string str;
-	int alphabet[26];
-	cin >> str;
-	for (int i = 0; i < 26; ++i)
-		alphabet[i] = -1;
-	for (int i = 0; i < str.length(); ++i)
-		if (alphabet[str[i] - 'a'] == -1) alphabet[str[i] - 'a'] = i;
-	for (int i = 0; i < 26; ++i)
-		cout << alphabet[i] << ' ';
+	int T, R;
+	string str, result[1001];
+	cin >> T;
+	for (int i = 0; i < T; ++i) {
+		int cnt = -1;
+		cin >> R >> str;
+		for (int j = 0; j < R * str.length(); ++j) {
+			if (j % R == 0)
+				++cnt;
+			result[i] += str[cnt];
+		}
+		cout << result[i] << '\n';
+	}
 	return 0;
 }
